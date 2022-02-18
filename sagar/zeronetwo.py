@@ -15,4 +15,4 @@ while j<=k:
         
         k-=1
     n+=1
-print(n)
+print(a)

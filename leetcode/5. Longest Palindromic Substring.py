@@ -1,4 +1,4 @@
-a='aaaabbaa'
+a='aaa'
 maxx=''
 i=0
 ps=[]
