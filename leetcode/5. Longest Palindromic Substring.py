@@ -1,15 +1,19 @@
-a='aaa'
-maxx=''
+a='abbadabd'
+maxx=0
 i=0
-ps=[]
-while i<len(a):
-    s=''
-    for j in range(i,len(a)):
-        s+=a[j]
-        if s==s[::-1]:
-            ps.append(s)
-            if len(s)>len(maxx):
-                maxx=s
+st=''
+m=0
+mat=[[True]*len(a) for i in range(len(a))]
+for i in range(1,len(a)):
+    k=i
+    for j in range(len(a)-i):
+        if a[j]==a[k]:
+            if mat[j+1][k-1] and m<len(a[j:k+1]):
+                mat[j][k]=True
+                m=len(a[j:k+1])
+                st=a[j:k+1]
+            else:mat[j][k]=False
+        else:mat[j][k]=False
 
-    i+=1
-print(maxx)
+        k+=1
+print(st)
