@@ -12,4 +12,6 @@ def findevendigits(digits):
             arr.append(int(temp))
     arr.sort()
     return arr
-print(findevendigits([1,2,0,3]))
+
+
+print(findevendigits([1, 2, 0, 3]))
