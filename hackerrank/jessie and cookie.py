@@ -1,18 +1,19 @@
-def cookie():
+import heapq
 
-    k=7
-    c=0
-    a = list(map(int, input().split()))
-    a.sort()
-    while len(a)>=2 and a[0]<k:
-        r=a.pop(0)
-        el=(r+(2*a.pop(0)))
-        print(el)
-        for i in range(len(a)):
-            if el>a[i]:
-                continue
-            break
-        a.insert(i,el)
-        c+=1
-    return -1 if a[0]<k else c
-print(cookie())
+
+def cookies(k, A):
+    # Write your code here
+    c = 0
+    heapq.heapify(A)
+    while True:
+        t1 = heapq.heappop(A)
+        if t1 >= k:
+            return c
+
+        if A:
+            t2 = heapq.heappop(A)
+            heapq.heappush(A, t1 + (2 * t2))
+            c += 1
+        else:
+            return -1
+print(cookies(7,[1, 2, 3, 9, 10, 12]))
