@@ -20,4 +20,4 @@ def topKFrequent(nums, k):
     for i in range(len(r)):
         res.append(r[i][1])
     return res
-print(topKFrequent([1,1,1,2,2,3],2))
+print(topKFrequent([1,1,1,8,8,3,4,4],2))
