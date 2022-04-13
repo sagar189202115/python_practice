@@ -1,9 +1,9 @@
 def anagramslist(strs):
-    d = {''.join(sorted(list(map(str, strs[i])))): [] for i in range(len(strs))}
+    ar = [''.join(sorted(list(map(str, strs[i])))) for i in range(len(strs))]
+    d = {i: [] for i in ar}
     r = []
     for i in range(len(strs)):
-        a = ''.join(sorted(list(map(str, strs[i]))))
-        d[a].append(strs[i])
+        d[ar[i]].append(strs[i])
     for k, v in d.items():
         r.append(d[k])
     return r
