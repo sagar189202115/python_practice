@@ -1,8 +1,8 @@
-s=list(map(int,input().split()))
+s1=list(map(int,input().split()))
 k=4
 r=[0]*k
 maxx=0
-for i in s:
+for i in s1:
     r[i%k]+=1
 maxx+=min(r[0],1)
 if(k)%2==0:
